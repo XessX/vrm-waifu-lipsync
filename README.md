@@ -7,7 +7,7 @@ Built using Three.js, VRM, Flask, torchaudio, and (optionally) Silero STT + phon
 
 ## 🚀 Demo
 
-![VRM Waifu Realtime Lip Sync Demo](https://cdn.jmp.ro/6f9a7552-fb80-4b60-8ec8-5d33c2878c22.gif)
+![Live Demo](https://jmp.sh/s/jmiNPM6UnldatUDUaRKP)
 
 
 ## Features
