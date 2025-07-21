@@ -7,7 +7,7 @@ Built using Three.js, VRM, Flask, torchaudio, and (optionally) Silero STT + phon
 
 ## 🚀 Demo
 
-- [Live demo video]](https://jumpshare.com/s/jmiNPM6UnldatUDUaRKP)
+- [Live demo video](https://jumpshare.com/s/jmiNPM6UnldatUDUaRKP)
 
 
 ## Features
