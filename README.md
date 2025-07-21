@@ -29,12 +29,13 @@ Built using Three.js, VRM, Flask, torchaudio, and (optionally) Silero STT + phon
 
 git clone https://github.com/YOUR_USERNAME/vrm-waifu-lipsync.git
 cd vrm-waifu-lipsync
+
 2. Install Python dependencies
 
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-# Also install espeak and ffmpeg as needed for phonemizer support
+# Also install espeak and ffmpeg as needed for phonemizer support if you want to use
 3. Install frontend dependencies
 
 
