@@ -1,86 +1,74 @@
-# VRM Waifu LipSync
+# VRM Waifu Realtime Lip Sync
 
-**A live 3D VRM avatar app that syncs your voice to mouth shapes and emotions in real time using Python, Three.js, and WebSockets.**
+Live, browser-based 3D waifu avatar with AI-powered real-time lip sync!  
+Built using Three.js, VRM, Flask, torchaudio, and (optionally) Silero STT + phonemizer.
 
----
+[![Front.png](https://i.postimg.cc/gJksc0Pw/Front.png)](https://postimg.cc/R3yKX4h9)
 
-![Demo GIF](demo.gif)
+## 🚀 Demo
 
-## 🚀 Features
+- [Live demo video/gif here!](https://jmp.sh/s/jmiNPM6UnldatUDUaRKP)
 
-- 🎤 **Real-time voice-driven lipsync** (vowel mouth shapes: aa, ee, ih, oh, ou)
-- 😄 **Emotion detection** (smile/angry) from your voice, visualized on avatar
-- 👀 **Natural random blinking** for lifelike effect
-- 🖥️ **3D anime-style VRM avatar** rendered in browser (Three.js)
-- 🔄 **Instant feedback**—see your avatar move as you speak
-- 🐍 **Python backend** with WebSockets for fast data streaming
+## Features
 
----
+- Upload and view your own VRM avatar in 3D
+- Realtime microphone-based mouth animation (lip sync)
+- AI-driven phoneme detection (supports "aa", "ee", "ih", "oh", "ou")
+- Fully local (all processing on your machine)
 
-## 🛠️ Quickstart
+## How It Works
 
-### **Requirements**
+- Frontend: Vite + Three.js loads VRM, captures mic, sends audio via Socket.IO
+- Backend: Flask + Flask-SocketIO receives audio, runs phoneme inference (Silero STT + phonemizer)
+- Detected phonemes are mapped to VRM blendshapes for expressive, anime-style lip sync
 
-- Python 3.9+
-- Node.js 18+
-- Chrome (recommended for mic support)
-- VRM file (try [VRoid Hub](https://hub.vroid.com/) or use provided sample)
+## Getting Started
 
-### **1. Install Backend (Python)**
+### 1. Clone the repo
 
-```bash
+git clone https://github.com/YOUR_USERNAME/vrm-waifu-lipsync.git
+cd vrm-waifu-lipsync
+2. Install Python dependencies
+
 python -m venv venv
-source venv/bin/activate         # or venv\Scripts\activate on Windows
-pip install flask flask-socketio torchaudio numpy
-2. Install Frontend (Node.js)
-bash
-Copy
-Edit
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+# Also install espeak and ffmpeg as needed for phonemizer support
+3. Install frontend dependencies
+
+
 npm install
-3. Run Both Servers
-Backend:
 
-bash
-Copy
-Edit
+4. Run backend
+
+
 python app.py
-Frontend:
 
-bash
-Copy
-Edit
+5. Run frontend
+
 npm run dev
-Visit http://localhost:5173 in Chrome and allow microphone.
 
-🧑‍💻 How it Works
-Your mic input is chunked and sent to Python backend over WebSockets
+6. Open http://localhost:5173
 
-Backend extracts features from your voice to estimate vowels and emotion (no heavy ML needed)
+File Structure
+app.py - Flask backend
 
-Data is streamed back instantly to animate the VRM avatar's mouth and face
+phoneme_classifier.py - AI phoneme detection logic
 
-Avatar blinks and animates in real time!
+src/main.js - Frontend logic (Three.js, VRM, mic, Socket.IO)
 
-📷 Demo
+public/Base.vrm - Sample VRM avatar
 
-Or record your own! See below for GIF instructions.
+Credits
+Silero VAD or STT
 
-📦 Project Structure
-bash
-Copy
-Edit
-app.py                   # Python backend server
-phoneme_classifier.py    # Voice analysis & phoneme detection
-/src/main.js             # Three.js + VRM frontend, real-time animation
-/index.html       # HTML UI
-/public/Base.vrm         # VRM 3D model (add your own for more avatars!)
-🎬 How to Record a GIF
-Screen capture your browser window while talking (try ShareX for Windows, or ScreenToGif).
+phonemizer
 
-Trim/convert to GIF. Aim for 5–15 seconds showing you talking and the avatar animating.
+VRM & Three.js
 
-Add the GIF to your repo as demo.gif and link in README.
+VRoid Studio for base
 
-🤝 Credits
-Built by [Your Name]
-Prompt & code design by [ChatGPT xAI Fullstack Realtime Guide]
+License
+MIT
+
+Copyright@XessX
